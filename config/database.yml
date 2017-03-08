@@ -22,5 +22,5 @@ test:
 
 production:
   adapter: postgresql
+  database: dre2fmbse5okr
   url: <%= ENV['DATABASE_URL'] %>
-  password: <%= ENV['RAILS-NATIONAL-PARKS_DATABASE_PASSWORD'] %>
