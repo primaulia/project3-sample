@@ -22,6 +22,5 @@ test:
 
 production:
   adapter: postgresql
-  database: rails-national-parks_production
-  username: rails-national-parks
+  url: <%= ENV['DATABASE_URL'] %>
   password: <%= ENV['RAILS-NATIONAL-PARKS_DATABASE_PASSWORD'] %>
