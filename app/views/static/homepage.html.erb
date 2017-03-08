@@ -1,4 +1,5 @@
-<h1>IDEAZ! I'm updating this through Travis</h1>
+<% provide(:title, 'Homepage') %>
+
 <% if current_user %>
   <!-- Show this paragraph only if user has been authenticated -->
   <p>Welcome to the app <%= current_user.email %></p>

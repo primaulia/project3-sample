@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Ideas Page') %>
 
-<h1>Ideas</h1>
+<p id="notice"><%= notice %></p>
 
 <table>
   <thead>
@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Picture</th>
+      <th>Tag</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,6 +20,14 @@
         <td><%= idea.description %></td>
         <td>
           <%= image_tag idea.picture, width: 300 if idea.picture.present? %>
+        </td>
+        <td>
+          <% idea.tags.each do |tag| %>
+            <button type="button" class="btn" style="background: <%= tag.color %>">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              <%= tag.name %>
+            </button>
+          <% end %>
         </td>
         <td><%= link_to 'Show', idea %></td>
         <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
