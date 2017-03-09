@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jk_rowling:
+  name: "JK Rowling"
+
+new_author:
+  name: ""
