@@ -2,6 +2,11 @@
 
 jk_rowling:
   name: "JK Rowling"
+  publisher: penguin
+
+tolkien:
+  name: "JR Tolkien"
+  publisher: penguin
 
 new_author:
   name: ""

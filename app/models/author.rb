@@ -1,5 +1,6 @@
 class Author < ApplicationRecord
-  has_one :book
+  has_many :books
+  belongs_to :publisher
 
   validates_presence_of :name
 end
