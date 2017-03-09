@@ -11,7 +11,6 @@ class PublisherTest < ActiveSupport::TestCase
     @tolkien = authors(:tolkien)
     @nobody = authors(:new_author)
   end
-
   test "name of publisher is Penguin" do
     assert_equal "Penguin", @the_publisher.name, "Name is not matched"
   end
