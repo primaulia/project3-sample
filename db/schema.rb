@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309061618) do
+ActiveRecord::Schema.define(version: 20170309073623) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 20170309061618) do
     t.index ["relationship_type", "relationship_id"], name: "index_fans_on_relationship_type_and_relationship_id"
   end
 
+  create_table "ga_users", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_ga_users_on_teacher_id"
+  end
+
   create_table "ideas", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -72,6 +80,15 @@ ActiveRecord::Schema.define(version: 20170309061618) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stalks", force: :cascade do |t|
+    t.integer  "stalker_id"
+    t.integer  "stalkee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stalkee_id"], name: "index_stalks_on_stalkee_id"
+    t.index ["stalker_id"], name: "index_stalks_on_stalker_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.string   "color"
@@ -80,6 +97,12 @@ ActiveRecord::Schema.define(version: 20170309061618) do
   end
 
   create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "twitter_users", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
